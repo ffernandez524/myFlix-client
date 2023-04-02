@@ -9,7 +9,7 @@ export const MainView = () => {
       title: "Silence of the Lambs",
       genre: "Thriller",
       description: 'A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer.',
-      director: "Marijn Haverbeke",
+      director: "Jonathan Demme",
     },
     { 
       id: 2, 
@@ -43,7 +43,7 @@ export const MainView = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   if (selectedMovie) {
-    return <movieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)}/>
+    return <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)}/>
   }
 
   if (movies.length === 0) {
@@ -52,7 +52,7 @@ export const MainView = () => {
     return (
       <div>
         {movies.map((movie) => (
-          <movieCard 
+          <MovieCard 
             key={movie.id} 
             movie={movie} 
             onMovieClick={(newSelectedMovie) => {
