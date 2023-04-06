@@ -32,7 +32,7 @@
 107C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\node-addon-api\napi-inl.h133244987095411794 0
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\regions\RU.js133244987106863477 0
 105C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\ordered-binary\index.js133244987094564625 0
-73C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist133244987131761308 1
+73C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist133248797424939045 1
 81C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules133244987114667376 1
 108C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\utility-types\package.json133244987095182562 0
 105C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\core\lib\public133244987099508101 1
@@ -92,7 +92,7 @@
 114C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\node-gyp-build-optional-packages133244987094993208 1
 99C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\json5\lib\util.js133244987095680891 0
 127C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\fs-search\fs-search.darwin-arm64.node133244987095381893 0
-82C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\src\index.jsx133248787214436278 0
+82C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\src\index.jsx133248797412108842 0
 114C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\source-map\dist\types.js133244987096019760 0
 116C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\core\lib\PackagerRunner.js133244987098710760 0
 105C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\json5\dist\index.min.js133244987094783897 0
@@ -116,7 +116,7 @@
 94C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\src\components\movie-view133248771490908949 1
 122C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\features\css-sticky.js133244987100743951 0
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\lmdb\dependencies\lz4\lib\lz4.c133244987096876894 0
-109C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\src\components\movie-view\movie-view.jsx133248784140211938 0
+109C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\src\components\movie-view\movie-view.jsx133248797067169897 0
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\regions\LR.js133244987104880117 0
 95C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\dotenv-expand133244987094763970 1
 122C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\features\es6-number.js133244987101800431 0
@@ -131,7 +131,7 @@
 100C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\is-extglob\LICENSE133244987094096194 0
 100C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\graph\test133244987095810471 1
 124C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\features\css-rrggbbaa.js133244987100624356 0
-107C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\src\components\main-view\main-view.jsx133248784140211938 0
+107C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\src\components\main-view\main-view.jsx133252821116012768 0
 108C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\node-releases\package.json133244987094285561 0
 86C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\.bin133244987110102645 1
 100C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\.package-lock.json133244987115116539 0
@@ -625,7 +625,7 @@
 100C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\anymatch\README.md133244987094335397 0
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\regions\RE.js133244987106674115 0
 99C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\sass\package.json133244987098013090 0
-96C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\index.ce1d6491.css.map133244987131691548 0
+96C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\index.ce1d6491.css.map133248797423543705 0
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\regions\RO.js133244987106823625 0
 99C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\sass\sass.dart.js133244987097953292 0
 102C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\sass\sass.default.js133244987097973223 0
@@ -1420,7 +1420,7 @@
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\regions\CZ.js133244987101192468 0
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\regions\DM.js133244987101371854 0
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\regions\DZ.js133244987101601095 0
-92C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\index.ce1d6491.css133244987131552011 0
+92C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\index.ce1d6491.css133248797423473956 0
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\regions\ER.js133244987101710730 0
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\regions\ES.js133244987101720926 0
 113C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\caniuse-lite\data\regions\ET.js133244987101840301 0
@@ -2115,7 +2115,7 @@
 112C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\utils\src\TapStream.js133244987098152625 0
 112C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\utils\lib\index.js.map133244987098680871 0
 107C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\types\build-ts.js133244987093876971 0
-84C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\index.html133244987130724807 0
+84C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\index.html133248797424620095 0
 110C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\transformer-sass\src133244987094783897 1
 105C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\source-map\dist133244987096239033 1
 111C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\@parcel\source-map\index.d.ts133244987098621055 0
@@ -2427,7 +2427,7 @@
 95C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\.bin\sass.cmd133244987109963108 0
 95C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\.bin\sass.ps1133244987109963108 0
 97C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\node_modules\.bin\semver.cmd133244987110102645 0
-91C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\index.b4b6dfad.js133244987131532078 0
-95C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\index.b4b6dfad.js.map133244987131691548 0
+91C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\index.b4b6dfad.js133248797424839387 0
+95C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\index.b4b6dfad.js.map133248797424919097 0
 99C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\myFlix-client.59712999.js133244985141380698 0
 103C:\Users\flare\OneDrive\Desktop\CareerFoundry\Websites\myFlix-client\dist\myFlix-client.59712999.js.map133244985141420532 0
