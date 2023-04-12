@@ -19,7 +19,10 @@ export const MainView = () => {
     }
 
     fetch("https://cinenotesmovieapp.herokuapp.com/movies", {
-      headers: { Authorization: 'Bearer ${token}' },
+      method: "GET",
+      headers: { 
+        Authorization: ('Bearer ' + token) 
+      },
     })
       .then((response) => response.json())
       .then((data) => {
@@ -62,7 +65,10 @@ export const MainView = () => {
   }
 
   if (movies.length === 0) {
-    return <div>The list is empty!</div>
+    return <div>
+              The list is empty!<br/>
+              <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
+            </div>
   } else {
     return (
       <div>
@@ -72,7 +78,8 @@ export const MainView = () => {
             movie={movie} 
             onMovieClick={(newSelectedMovie) => {
               setSelectedMovie(newSelectedMovie);
-          }}/>
+            }}
+          />
         ))}
         <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
       </div>
