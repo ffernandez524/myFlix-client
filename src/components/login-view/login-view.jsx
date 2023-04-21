@@ -43,7 +43,6 @@ export const LoginView = ({ onLoggedIn }) => {
       <Form.Group controlId="formUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control
-          color="success"
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
