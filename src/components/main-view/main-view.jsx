@@ -6,6 +6,7 @@ import { SignupView } from "../signup-view/signup-view";
 import { ProfileView } from "../profile-view/profile-view";
 
 
+
 import { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -16,8 +17,8 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser? storedUser : null);
   const [token, setToken] = useState(storedToken? storedToken : null);
   const [movies, setMovies ] = useState([]);
-  const [users, setUsers ] = useState([]);
-  
+  //const [userFavs, setUserFavorites] = useState([]);
+
   useEffect(() => {
     if (!token) {
       return;
@@ -43,31 +44,66 @@ export const MainView = () => {
           featured: doc.Featured
         };
       });
-        
       setMovies(moviesFromApi);
-    });
-
-    /* Fetch list of users from API */
-    fetch("https://cinenotesmovieapp.herokuapp.com/users", {
-      method: "GET",
-      headers: { 
-        Authorization: ('Bearer ' + token) 
-      },
-    }).then((response) => response.json())
-    .then((data) => {    
-      const usersFromApi = data.map((doc) => {
-        return {
-          id: doc._id,
-          username: doc.Username,
-          email: doc.Email,
-          birthday: doc.Birthday,
-          favorites: doc.Favorites
-        };
-      });     
-      setUsers(usersFromApi);      
+      console.log(user.Favorites);
     });
   }, [token]);
 
+  const updateUser = user => {
+    setUser(user);
+    localStorage.setItem("user", JSON.stringify(user));
+  };
+
+  const addFavorite = (movId) => {
+    if(user.Favorites.includes(movId)) {
+        console.log("Favorite already exists.")
+    } else {
+        fetch(`https://cinenotesmovieapp.herokuapp.com/users/${user.Username}/favorites/${movId}`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`, "Content-Type": "application/json"
+            },
+        }).then((res) => res.json())
+        .then((res) => {
+            console.log("Response: ", res);
+            if (res) {
+                updateUser(res);
+                console.log("Movie added successfully to favorites.");
+            } else {
+                alert("Error adding movie to favorites!");
+            } 
+        }).catch((e) => {
+            alert("Something went wrong");
+        });
+    }
+  }
+
+  const delFavorite = (movId) => {  
+    if(!user.Favorites.includes(movId)) {
+        console.log("Movie does not exist in favorites.")
+    } else {
+        
+        fetch(`https://cinenotesmovieapp.herokuapp.com/users/${user.Username}/favorites/${movId}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${token}`, "Content-Type": "application/json"
+            },
+        }).then((res) => res.json())
+        .then((res) => {
+            console.log("Response: ", res);
+            if (res) {                       
+                updateUser(res);
+                console.log("Movie deleted successfully from favorites.");
+            } else {
+                alert("Error deleting movie from favorites!");
+            } 
+        }).catch((e) => {
+            alert("Something went wrong");
+        });
+    }
+  }
+
+  
   return (
     <BrowserRouter>
       <NavigationBar 
@@ -88,7 +124,7 @@ export const MainView = () => {
                 {user ? (
                   <Navigate to="/" />
                 ) : (
-                  <Col md={5}>
+                  <Col md={6}>
                     <SignupView />
                   </Col>
                 )}
@@ -122,7 +158,10 @@ export const MainView = () => {
                   <Navigate to="/login" />
                 ) : (
                   <Col>
-                    <ProfileView users={users} movies={movies} />
+                    <ProfileView 
+                      user={user} token={token} movies={movies}
+                      addFavorite={addFavorite} delFavorite={delFavorite} 
+                      updateUser={updateUser}/>
                   </Col>
                 )}
               </>
@@ -158,7 +197,9 @@ export const MainView = () => {
                   <>
                     {movies.map((movie) => (
                       <Col className="mb-4" key={movie.id} md={3}>
-                        <MovieCard movie={movie} />
+                        <MovieCard                          
+                          user={user} movie={movie}
+                          addFavorite={addFavorite} delFavorite={delFavorite}  />
                       </Col>
                     ))}
                   </>

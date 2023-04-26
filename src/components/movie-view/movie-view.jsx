@@ -2,9 +2,10 @@ import {Row, Col, Container, Button} from "react-bootstrap";
 import { useParams } from  "react-router";
 import { Link } from "react-router-dom"
 
-export const MovieView = ({ movies }) => {
+export const MovieView = ({ movies, updateUser }) => {
   const { movieId } = useParams();
   const movie = movies.find((m) => m.id === movieId);
+  updateUser={updateUser}
     return (
       <Container className="bg-light text-center">
         <Row className="mb-4 border w-100">

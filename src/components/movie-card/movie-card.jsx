@@ -1,17 +1,29 @@
-import React from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const MovieCard = ({ movie }) => {
+export const MovieCard = ({ user, addFavorite, delFavorite, movie }) => {
   return (
-    <Card className="h-100">
+    <Card className="h-100 text-center">
       <Card.Body>
         <Card.Title>{movie.title}</Card.Title>
         <Card.Text>{movie.description}</Card.Text>        
         <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
           <Button variant="link">More Information</Button>
         </Link>
+        { user.Favorites.find((fav) => fav === movie.id) ? (
+          <Button variant="primary"
+            onClick={() => delFavorite(movie.id)}>
+              Remove from Favorites
+          </Button>
+        ) : (
+          <Button 
+            variant="primary"
+            onClick={() => addFavorite(movie.id)}>
+              Add to Favorites
+          </Button>
+        )}        
       </Card.Body>
       <Card.Body>
         <ListGroup className="position-relative bottom-0"> 
