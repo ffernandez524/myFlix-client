@@ -1,10 +1,13 @@
-import Container from "react-bootstrap/Container";
-import {Row, Col, Button} from "react-bootstrap";
-import "./movie-view.scss";
+import {Row, Col, Container, Button} from "react-bootstrap";
+import { useParams } from  "react-router";
+import { Link } from "react-router-dom"
 
-export const MovieView = ({ movie, onBackClick }) => {
+export const MovieView = ({ movies, updateUser }) => {
+  const { movieId } = useParams();
+  const movie = movies.find((m) => m.id === movieId);
+  updateUser={updateUser}
     return (
-      <Container fluid className="bg-light text-center">
+      <Container className="bg-light text-center">
         <Row className="mb-4 border w-100">
           <Col>Title: {movie.title}</Col>
           <Col>Description: {movie.description}</Col>
@@ -17,7 +20,9 @@ export const MovieView = ({ movie, onBackClick }) => {
           <Col>Genre: {movie.genre.Name}</Col>
           <Col>Genre Description: {movie.genre.Description}</Col>
         </Row>
-        <Button onClick={onBackClick} className="back-button">Back</Button>
+        <Link to={`/`}>
+          <button className="back-button">Back</button>
+        </Link>
       </Container>
     );
   };
