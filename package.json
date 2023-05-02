@@ -22,7 +22,6 @@
     "@parcel/css": "^1.14.0",
     "@parcel/transformer-sass": "^2.8.1",
     "parcel": "^2.8.1",
-    "process": "^0.11.10",
-    "react-scripts": "^5.0.1"
+    "process": "^0.11.10"
   }
 }
