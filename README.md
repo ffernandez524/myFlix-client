@@ -20,4 +20,10 @@ Bootstrap
 
 ## API
 
-This project uses a basic movie API that was also created at CareerFoundry: https://cinenotesmovieapp.herokuapp.com/
+This project uses a basic movie API that was also created at CareerFoundry: 
+
+API Site: 
+https://cinenotesmovieapp.herokuapp.com/
+
+Github Link: 
+https://github.com/ffernandez524/movie_api
