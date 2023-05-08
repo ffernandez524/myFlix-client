@@ -11,8 +11,11 @@ Upon signing in, you can browse or search for movies! Clicking on a button on a 
 ## Dependencies
 
 React
+
 React-Router
+
 NodeJS
+
 Bootstrap
 
 ## API
