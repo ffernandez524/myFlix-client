@@ -8,7 +8,7 @@ import { ProfileView } from "../profile-view/profile-view";
 
 
 import { useState, useEffect } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Form } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
@@ -17,8 +17,10 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser? storedUser : null);
   const [token, setToken] = useState(storedToken? storedToken : null);
   const [movies, setMovies ] = useState([]);
-  //const [userFavs, setUserFavorites] = useState([]);
+  const [search, setSearch] = useState("");
+  const [searchedMovies, setSearchedMovies] = useState([]);
 
+  //Get List of Movies
   useEffect(() => {
     if (!token) {
       return;
@@ -49,11 +51,22 @@ export const MainView = () => {
     });
   }, [token]);
 
+  //Update user after being changed
   const updateUser = user => {
     setUser(user);
     localStorage.setItem("user", JSON.stringify(user));
   };
 
+  //Search list of movies for entered string
+  useEffect(() => {
+    if (search === "") {
+      setSearchedMovies(movies);
+      return;
+    }
+    setSearchedMovies(movies.filter(mov => mov.title.toLowerCase().includes(search)));    
+  }, [search]);
+
+  //Add movie to user's favorites list after clicking button
   const addFavorite = (movId) => {
     if(user.Favorites.includes(movId)) {
         console.log("Favorite already exists.")
@@ -78,6 +91,7 @@ export const MainView = () => {
     }
   }
 
+  //Delete movie from user's favorites list after clicking button
   const delFavorite = (movId) => {  
     if(!user.Favorites.includes(movId)) {
         console.log("Movie does not exist in favorites.")
@@ -139,7 +153,7 @@ export const MainView = () => {
                 {user ? (
                   <Navigate to="/" />
                 ) : (
-                  <Col md={5}>
+                  <Col>
                     <LoginView onLoggedIn={(user, token) => {
                       setUser(user);
                       setToken(token);
@@ -195,7 +209,20 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    {movies.map((movie) => (
+                    <Row className="justify-content-center text-center">
+                      <Form.Label className="">Search</Form.Label>
+                      <Form.Control
+                          type="text"
+                          placeholder="Type here to search"
+                          value={search}
+                          className="bg-light w-50"
+                          onChange={(e) => setSearch(e.target.value.toLowerCase())}
+                          required
+                          minLength="3"
+                          pattern="[a-zA-Z0-9]+"
+                      />
+                    </Row>
+                    {searchedMovies.map((movie) => (
                       <Col className="mb-4" key={movie.id} md={3}>
                         <MovieCard                          
                           user={user} movie={movie}

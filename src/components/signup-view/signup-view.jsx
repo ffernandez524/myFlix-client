@@ -41,7 +41,8 @@ export const SignupView = () => {
                 <Form.Control
                     type="text"
                     value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    className="bg-light"
+                    onChange={(e) => setUsername(e.target.value.toLowerCase())}
                     required
                     minLength="3"
                     pattern="[a-zA-Z0-9]+"
@@ -52,6 +53,7 @@ export const SignupView = () => {
                 <Form.Control
                     type="text"
                     value={password}
+                    className="bg-light"
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
@@ -61,6 +63,7 @@ export const SignupView = () => {
                 <Form.Control
                     type="email"
                     value={email}
+                    className="bg-light"
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
@@ -70,6 +73,7 @@ export const SignupView = () => {
                 <Form.Control
                     type="date"
                     value={birthday}
+                    className="bg-light"
                     onChange={(e) => setBirthday(e.target.value)}
                     required
                 />

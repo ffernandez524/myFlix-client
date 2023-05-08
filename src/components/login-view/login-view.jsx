@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
+import { Col, Row, Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 
 export const LoginView = ({ onLoggedIn }) => {
@@ -39,29 +39,41 @@ export const LoginView = ({ onLoggedIn }) => {
   };
   
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
-        <Form.Control
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          minLength="3"
-        />
-      </Form.Group>
+    <Row className="text-center">
+      <h1>Cinenotes</h1>
+      <Col>
+        Welcome to Cinenotes! This is a prototype website that allows users
+        to browse movie data and save their favorites! Please login on the
+        right or click the signup button above to register!
+      </Col>
+      <Col>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group  controlId="formUsername">
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type="text"
+              value={username}
+              className="bg-light"
+              onChange={(e) => setUsername(e.target.value.toLowerCase())}
+              required
+              minLength="3"
+            />
+          </Form.Group>
 
-      <Form.Group controlId="formPassword">
-        <Form.Label>Password:</Form.Label>
-        <Form.Control
-          type="password" 
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </Form.Group>        
-      <Button variant="primary" type="submit">Submit</Button>
-    </Form>
+          <Form.Group controlId="formPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password" 
+              value={password}
+              className="bg-light"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </Form.Group>        
+          <Button variant="primary" type="submit">Submit</Button>
+        </Form>
+      </Col>
+    </Row>    
   );
 };
 

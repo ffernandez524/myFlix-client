@@ -20,7 +20,7 @@ export const ProfileView = ({user, token, movies, addFavorite, delFavorite, upda
       Email: email,
       Birthday: birthday,
     };
-
+    
     fetch(`https://cinenotesmovieapp.herokuapp.com/users/${user.Username}`, {
       method: "PUT",
       headers: {
@@ -43,8 +43,8 @@ export const ProfileView = ({user, token, movies, addFavorite, delFavorite, upda
   };
 
   return (
-    <Container className="bg-light">
-      <Row className="mb-4 border w-100">
+    <Container>
+      <Row className="mb-4 w-100">
         <Col md={6}>
           <h4>User Profile</h4>
           <b>Username:</b> {user.Username} <br/>
@@ -59,7 +59,9 @@ export const ProfileView = ({user, token, movies, addFavorite, delFavorite, upda
                 <Form.Control
                     type="text"
                     value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    className="bg-light"
+                    onChange={(e) => setUsername(e.target.value.toLowerCase())}
+                    required
                     minLength="3"
                     pattern="[a-zA-Z0-9]+"
                 />
@@ -69,7 +71,10 @@ export const ProfileView = ({user, token, movies, addFavorite, delFavorite, upda
                 <Form.Control
                     type="password"
                     value={password}
+                    className="bg-light"
                     onChange={(e) => setPassword(e.target.value)}
+                    required
+                    minLength="3"
                 />
             </Form.Group>
             <Form.Group controlId="formEmail">
@@ -77,7 +82,10 @@ export const ProfileView = ({user, token, movies, addFavorite, delFavorite, upda
                 <Form.Control
                     type="email"
                     value={email}
+                    className="bg-light"
                     onChange={(e) => setEmail(e.target.value)}
+                    required
+                    minLength="3"
                 />
             </Form.Group>
             <Form.Group controlId="formBirthday">
@@ -85,14 +93,17 @@ export const ProfileView = ({user, token, movies, addFavorite, delFavorite, upda
                 <Form.Control
                     type="date"
                     value={birthday}
+                    className="bg-light"
                     onChange={(e) => setBirthday(e.target.value)}
+                    required
+                    minLength="3"
                 />
             </Form.Group>          
             <Button variant="primary" type="submit">Submit</Button>
           </form>
         </Col>
       </Row>
-      <Row className="mb-4 border text-center">
+      <Row className="mb-4 text-center">
           <h4>Favorites List</h4>
           {userFavs.length === 0 ? (
             <Col>No favorite movies!</Col>
