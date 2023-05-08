@@ -47,7 +47,7 @@ export const MainView = () => {
         };
       });
       setMovies(moviesFromApi);
-      setSearch("");
+      setSearchedMovies(moviesFromApi);
     });
   }, [token]);
 
