@@ -2,12 +2,14 @@ import { useState } from "react";
 import {Row, Col, Container, Button, Form} from "react-bootstrap";
 import { Link } from "react-router-dom"
 import { MovieCard } from "../movie-card/movie-card";
+import { useNavigate } from 'react-router-dom';
 
-export const ProfileView = ({user, token, movies, addFavorite, delFavorite, updateUser }) => {
+export const ProfileView = ({user, token, movies, addFavorite, delFavorite, updateUser, onLoggedOut }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
+  const navigate = useNavigate();
   let userFavs = movies.filter(m => user.Favorites.includes(m.id))
 
   const handleSubmit = (event) => {
@@ -30,9 +32,10 @@ export const ProfileView = ({user, token, movies, addFavorite, delFavorite, upda
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log("Login response: ", res);
+        console.log("Update response: ", res);
         if (res) {
           updateUser(res);
+          alert("User profile successfully updated");
         } else {
           alert("Error updating user.");
         }
@@ -42,6 +45,34 @@ export const ProfileView = ({user, token, movies, addFavorite, delFavorite, upda
       });
   };
 
+  const deleteAccount = () => {
+
+    if (!window.confirm("Really delete account?")) {
+      return;
+    }
+    
+    fetch(`https://cinenotesmovieapp.herokuapp.com/users/${user.Username}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.text())
+      .then((res) => {
+        console.log("Delete response: ", res);
+        if (res) {
+          updateUser([]);
+          onLoggedOut();
+          navigate("/login");
+        } else {
+          alert("Error deleting user.");
+        }
+      })      
+      .catch((e) => {
+        alert("Something went wrong");
+      });
+  }
+
   return (
     <Container>
       <Row className="mb-4 w-100">
@@ -49,7 +80,8 @@ export const ProfileView = ({user, token, movies, addFavorite, delFavorite, upda
           <h4>User Profile</h4>
           <b>Username:</b> {user.Username} <br/>
           <b>Email:</b> {user.Email} <br/>
-          <b>Birthday:</b> {user.Birthday.substring(0, user.Birthday.indexOf('T'))} 
+          <b>Birthday:</b> {user.Birthday.substring(0, user.Birthday.indexOf('T'))} <br/>
+          <Button variant="danger" className="ml-50" onClick={deleteAccount}>Delete Account</Button>
         </Col>
         <Col md={6}>
           <h4>Update Profile</h4>

@@ -47,7 +47,6 @@ export const MainView = () => {
         };
       });
       setMovies(moviesFromApi);
-      console.log(user.Favorites);
     });
   }, [token]);
 
@@ -117,16 +116,18 @@ export const MainView = () => {
     }
   }
 
+  const onLoggedOut = () => {
+    setUser(null);
+    setToken(null);
+    setSearch("");
+    localStorage.clear();       
+  }
   
   return (
     <BrowserRouter>
       <NavigationBar 
         user={user}
-        onLoggedOut={() => {
-          setUser(null);
-          setToken(null);
-          localStorage.clear();
-        }}
+        onLoggedOut={onLoggedOut}
       />
       <Row>
         <Routes>
@@ -154,9 +155,10 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col>
-                    <LoginView onLoggedIn={(user, token) => {
+                    <LoginView updateUser={updateUser} onLoggedIn={(user, token) => {
                       setUser(user);
                       setToken(token);
+                      setSearch("");
                     }}/>
                   </Col>
                 )}
@@ -175,7 +177,8 @@ export const MainView = () => {
                     <ProfileView 
                       user={user} token={token} movies={movies}
                       addFavorite={addFavorite} delFavorite={delFavorite} 
-                      updateUser={updateUser}/>
+                      updateUser={updateUser} onLoggedOut={onLoggedOut}
+                    />
                   </Col>
                 )}
               </>
